@@ -8,14 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AFHTTPRequestCache : NSObject<NSSecureCoding, NSCopying>
+@interface AFHTTPRequestCache : NSObject<NSSecureCoding>
 
 @property (readonly, copy) NSString *url;
-@property (readonly, copy) NSDictionary *responseObject;
+@property (readonly, copy) id responseObject;
 @property (readonly, copy) NSDate* expirationDate;
 
 - (id)initWithUrl:(NSString*)url
-   responseObject:(NSDictionary*)responseObject
+   responseObject:(id)responseObject
    expirationDate:(NSDate*)expirationDate;
+
++ (void)saveCacheWithURL:(NSString*)url
+      expirationInterval:(NSTimeInterval)expirationInterval
+          responseObject:(NSDictionary*)responseObject;
+
++ (AFHTTPRequestCache*)getCacheWithURL:(NSString*)url;
 
 @end

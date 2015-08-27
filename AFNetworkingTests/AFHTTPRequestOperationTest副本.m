@@ -286,10 +286,6 @@
     }];
 }
 
-- (void)testImage
-{
-    
-}
 - (void)testRunloop
 {
 //    while (1) {
