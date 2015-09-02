@@ -46,86 +46,86 @@
 
 - (void)testGET{
     
-//    XCTestExpectation* channelException = [self expectationWithDescription:@"channel"];
-//    
-//    [[AFHTTPRequestOperationManager manager] GET:@"http://po.funshion.com/v7/config/channel"
-//                                      parameters:nil
-//                              expirationInterval:60
-//                                 completionBlock:^(id responseObject, NSError *error) {
-//        
-//        [channelException fulfill];
-//        
-//        XCTAssertNotNil(responseObject);
-//        XCTAssertNil(error);
-//
-//    }];
-//    
-//    
-//    XCTestExpectation* homepageException = [self expectationWithDescription:@"homepage"];
-//    
-//    [[AFHTTPRequestOperationManager manager] GET:@"http://po.funshion.com/v7/config/homepage"
-//                                      parameters:nil
-//                              expirationInterval:60
-//                                 completionBlock:^(id responseObject, NSError *error) {
-//        
-//        [homepageException fulfill];
-//        
-//        XCTAssertNotNil(responseObject);
-//        XCTAssertNil(error);
-//
-//        
-//    }];
-//    
-//    XCTestExpectation* mediaplayException = [self expectationWithDescription:@"mediaplay"];
-//    
-//    [[AFHTTPRequestOperationManager manager] GET:@"http://pm.funshion.com/v5/media/play"
-//                                      parameters:[NSDictionary dictionaryWithObjectsAndKeys:@"622334", @"id",nil]
-//                              expirationInterval:60
-//                                 completionBlock:^(id responseObject, NSError *error) {
-//        
-//        
-//        [mediaplayException fulfill];
-//        
-//        XCTAssertNotNil(responseObject);
-//        XCTAssertNil(error);
-//        
-//        
-//    }];
-//    
-//    XCTestExpectation* mediadownloadException = [self expectationWithDescription:@"mediadownload"];
-//    
-//    [[AFHTTPRequestOperationManager manager] GET:@"http://pm.funshion.com/v5/media/download"
-//                                      parameters:[NSDictionary dictionaryWithObjectsAndKeys:@"622334", @"id",nil]
-//                              expirationInterval:60
-//                                 completionBlock:^(id responseObject, NSError *error) {
-//        
-//        
-//        [mediadownloadException fulfill];
-//        
-//        XCTAssertNotNil(responseObject);
-//        XCTAssertNil(error);
-//
-//        
-//        
-//    }];
-//    
-//    XCTestExpectation* videoplayException = [self expectationWithDescription:@"videoplay"];
-//    
-//    [[AFHTTPRequestOperationManager manager] GET:@"http://pv.funshion.com/v5/video/play"
-//                                      parameters:[NSDictionary dictionaryWithObjectsAndKeys:@"4004819", @"id",nil]
-//                              expirationInterval:60
-//                                 completionBlock:^(id responseObject, NSError *error) {
-//                                     
-//                                     [videoplayException fulfill];
-//                                     
-//                                     XCTAssertNotNil(responseObject);
-//                                     XCTAssertNil(error);
-//                                     
-//                                     NSLog(@"%@", responseObject);
-//                                     
-//                                     
-//                                 }];
-//    
+    XCTestExpectation* channelException = [self expectationWithDescription:@"channel"];
+    
+    [[AFHTTPRequestOperationManager manager] GET:@"http://po.funshion.com/v7/config/channel"
+                                      parameters:nil
+                              expirationInterval:60
+                                 completionBlock:^(id responseObject, NSError *error) {
+        
+        [channelException fulfill];
+        
+        XCTAssertNotNil(responseObject);
+        XCTAssertNil(error);
+
+    }];
+    
+    
+    XCTestExpectation* homepageException = [self expectationWithDescription:@"homepage"];
+    
+    [[AFHTTPRequestOperationManager manager] GET:@"http://po.funshion.com/v7/config/homepage"
+                                      parameters:nil
+                              expirationInterval:60
+                                 completionBlock:^(id responseObject, NSError *error) {
+        
+        [homepageException fulfill];
+        
+        XCTAssertNotNil(responseObject);
+        XCTAssertNil(error);
+
+        
+    }];
+    
+    XCTestExpectation* mediaplayException = [self expectationWithDescription:@"mediaplay"];
+    
+    [[AFHTTPRequestOperationManager manager] GET:@"http://pm.funshion.com/v5/media/play"
+                                      parameters:[NSDictionary dictionaryWithObjectsAndKeys:@"622334", @"id",nil]
+                              expirationInterval:60
+                                 completionBlock:^(id responseObject, NSError *error) {
+        
+        
+        [mediaplayException fulfill];
+        
+        XCTAssertNotNil(responseObject);
+        XCTAssertNil(error);
+        
+        
+    }];
+    
+    XCTestExpectation* mediadownloadException = [self expectationWithDescription:@"mediadownload"];
+    
+    [[AFHTTPRequestOperationManager manager] GET:@"http://pm.funshion.com/v5/media/download"
+                                      parameters:[NSDictionary dictionaryWithObjectsAndKeys:@"622334", @"id",nil]
+                              expirationInterval:60
+                                 completionBlock:^(id responseObject, NSError *error) {
+        
+        
+        [mediadownloadException fulfill];
+        
+        XCTAssertNotNil(responseObject);
+        XCTAssertNil(error);
+
+        
+        
+    }];
+    
+    XCTestExpectation* videoplayException = [self expectationWithDescription:@"videoplay"];
+    
+    [[AFHTTPRequestOperationManager manager] GET:@"http://pv.funshion.com/v5/video/play"
+                                      parameters:[NSDictionary dictionaryWithObjectsAndKeys:@"4004819", @"id",nil]
+                              expirationInterval:60
+                                 completionBlock:^(id responseObject, NSError *error) {
+                                     
+                                     [videoplayException fulfill];
+                                     
+                                     XCTAssertNotNil(responseObject);
+                                     XCTAssertNil(error);
+                                     
+                                     NSLog(@"%@", responseObject);
+                                     
+                                     
+                                 }];
+    
 
     XCTestExpectation* invalidException = [self expectationWithDescription:@"invalidException"];
     
@@ -158,6 +158,8 @@
     NSString* filePath0 =  [cachesPath stringByAppendingPathComponent:@"20150715135654-8638844.mp4"];
     NSString* fileURL0 = @"http://adm.funshion.com/mat/20150715135654-8638844.mp4";
     
+    [[NSFileManager defaultManager] removeItemAtPath:filePath0 error:nil];
+    
     [[AFHTTPRequestOperationManager manager] DFILE:fileURL0
                                        parameters:nil
                                          savePath:filePath0
@@ -169,11 +171,15 @@
                                       
                                       [fileException0 fulfill];
                                       
+                                      XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:filePath0]);
+                                      
                                   }];
     
     XCTestExpectation* fileException1 = [self expectationWithDescription:@"fileException1"];
     NSString* filePath1 =  [cachesPath stringByAppendingPathComponent:@"49C77BC2F168D2A538F3568AD85AB1932FEFCE17.mp4"];
     NSString* fileURL1 = @"http://124.228.136.144:80/play/49C77BC2F168D2A538F3568AD85AB1932FEFCE17.mp4";
+    
+    [[NSFileManager defaultManager] removeItemAtPath:filePath1 error:nil];
     
     [[AFHTTPRequestOperationManager manager] DFILE:fileURL1
                                        parameters:nil
@@ -185,12 +191,15 @@
                                   completionBlock:^(NSError *error) {
                                       
                                       [fileException1 fulfill];
+                                      XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:filePath1]);
                                       
                                   }];
     
     XCTestExpectation* fileException2 = [self expectationWithDescription:@"fileException2"];
     NSString* fileURL2 = @"http://218.76.97.44:80/play/45EA188606B53599639C757B2CC111694751765F.mp4";
     NSString* filePath2 =  [cachesPath stringByAppendingPathComponent:@"45EA188606B53599639C757B2CC111694751765F.mp4"];
+    
+    [[NSFileManager defaultManager] removeItemAtPath:filePath2 error:nil];
     
     [[AFHTTPRequestOperationManager manager] DFILE:fileURL2
                                        parameters:nil
@@ -202,12 +211,14 @@
                                   completionBlock:^(NSError *error) {
                                       
                                       [fileException2 fulfill];
+                                      XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:filePath2]);
                                       
                                   }];
     
     XCTestExpectation* fileException3 = [self expectationWithDescription:@"fileException3"];
     NSString* fileURL3 = @"http://124.228.136.142:80/play/CEEE18709F2DF2B224BE2FDF6EA517186DAC59B6.mp4";
     NSString* filePath3 =  [cachesPath stringByAppendingPathComponent:@"CEEE18709F2DF2B224BE2FDF6EA517186DAC59B6.mp4"];
+    [[NSFileManager defaultManager] removeItemAtPath:filePath3 error:nil];
     
     [[AFHTTPRequestOperationManager manager] DFILE:fileURL3
                                        parameters:nil
@@ -219,6 +230,7 @@
                                   completionBlock:^(NSError *error) {
                                       
                                       [fileException3 fulfill];
+                                      XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:filePath3]);
                                       
                                   }];
     [self waitForExpectationsWithTimeout:60*60 handler:^(NSError *error) {
