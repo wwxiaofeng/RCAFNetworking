@@ -147,10 +147,11 @@ static AFHTTPRequestOperationManager* sharedInstance;
                 
                 completionBlock(weakOperation.responseObject, weakOperation.error);
                 
-                [AFHTTPResponseCache saveResponseDataToDiskWithURL:[request.URL absoluteString]
-                                                      responseData:weakOperation.responseData];
+                if (weakOperation.responseObject) {
+                    [AFHTTPResponseCache saveResponseDataToDiskWithURL:[request.URL absoluteString]
+                                                          responseData:weakOperation.responseData];
+                }
             }
-
         }
     }];
     

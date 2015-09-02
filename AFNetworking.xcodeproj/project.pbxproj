@@ -17,6 +17,7 @@
 		C27DFD161B4A808D008671C4 /* AFHTTPRequestOperationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C27DFD151B4A808D008671C4 /* AFHTTPRequestOperationTest.m */; };
 		C2A1358E1B8EF7A900C049C6 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A1358D1B8EF7A900C049C6 /* UIImageView+AFNetworking.m */; };
 		C2A742F01B85B833004C9C33 /* AFHTTPResponseCache..m in Sources */ = {isa = PBXBuildFile; fileRef = C2A742EF1B85B833004C9C33 /* AFHTTPResponseCache..m */; };
+		C2AA65821B96995A00C86819 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2AA65811B96995A00C86819 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,6 @@
 /* Begin PBXFileReference section */
 		C27DFCDB1B4A6A1E008671C4 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C27DFCE61B4A6A1E008671C4 /* AFNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AFNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C27DFCEC1B4A6A1E008671C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C27DFCF71B4A6A58008671C4 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
 		C27DFCF81B4A6A58008671C4 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		C27DFCFB1B4A6A58008671C4 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
@@ -63,6 +63,7 @@
 		C2A1358D1B8EF7A900C049C6 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		C2A742EE1B85B833004C9C33 /* AFHTTPResponseCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPResponseCache.h; sourceTree = "<group>"; };
 		C2A742EF1B85B833004C9C33 /* AFHTTPResponseCache..m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPResponseCache..m; sourceTree = "<group>"; };
+		C2AA65811B96995A00C86819 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +134,7 @@
 		C27DFCEB1B4A6A1E008671C4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C27DFCEC1B4A6A1E008671C4 /* Info.plist */,
+				C2AA65811B96995A00C86819 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -260,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2AA65821B96995A00C86819 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

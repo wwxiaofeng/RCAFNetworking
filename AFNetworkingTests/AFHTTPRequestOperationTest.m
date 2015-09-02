@@ -46,83 +46,86 @@
 
 - (void)testGET{
     
-    XCTestExpectation* channelException = [self expectationWithDescription:@"channel"];
-    
-    [[AFHTTPRequestOperationManager manager] GET:@"http://po.funshion.com/v7/config/channel"
-                                      parameters:nil
-                              expirationInterval:60
-                                 completionBlock:^(id responseObject, NSError *error) {
-        
-        [channelException fulfill];
-        
-        XCTAssertNotNil(responseObject);
-        XCTAssertNil(error);
-
-    }];
-    
-    
-    XCTestExpectation* homepageException = [self expectationWithDescription:@"homepage"];
-    
-    [[AFHTTPRequestOperationManager manager] GET:@"http://po.funshion.com/v7/config/homepage"
-                                      parameters:nil
-                              expirationInterval:60
-                                 completionBlock:^(id responseObject, NSError *error) {
-        
-        [homepageException fulfill];
-        
-        XCTAssertNotNil(responseObject);
-        XCTAssertNil(error);
-
-        
-    }];
-    
-    XCTestExpectation* mediaplayException = [self expectationWithDescription:@"mediaplay"];
-    
-    [[AFHTTPRequestOperationManager manager] GET:@"http://pm.funshion.com/v5/media/play"parameters:[NSDictionary dictionaryWithObjectsAndKeys:@"622334", @"id",nil] completionBlock:^(id responseObject, NSError *error) {
-        
-        
-        [mediaplayException fulfill];
-        
-        XCTAssertNotNil(responseObject);
-        XCTAssertNil(error);
-        
-        
-    }];
-    
-    XCTestExpectation* mediadownloadException = [self expectationWithDescription:@"mediadownload"];
-    
-    [[AFHTTPRequestOperationManager manager] GET:@"http://pm.funshion.com/v5/media/download"
-                                      parameters:[NSDictionary dictionaryWithObjectsAndKeys:@"622334", @"id",nil]
-                              expirationInterval:60
-                                 completionBlock:^(id responseObject, NSError *error) {
-        
-        
-        [mediadownloadException fulfill];
-        
-        XCTAssertNotNil(responseObject);
-        XCTAssertNil(error);
-
-        
-        
-    }];
-    
-    XCTestExpectation* videoplayException = [self expectationWithDescription:@"videoplay"];
-    
-    [[AFHTTPRequestOperationManager manager] GET:@"http://pv.funshion.com/v5/video/play"
-                                      parameters:[NSDictionary dictionaryWithObjectsAndKeys:@"4004819", @"id",nil]
-                              expirationInterval:60
-                                 completionBlock:^(id responseObject, NSError *error) {
-                                     
-                                     [videoplayException fulfill];
-                                     
-                                     XCTAssertNotNil(responseObject);
-                                     XCTAssertNil(error);
-                                     
-                                     NSLog(@"%@", responseObject);
-                                     
-                                     
-                                 }];
-    
+//    XCTestExpectation* channelException = [self expectationWithDescription:@"channel"];
+//    
+//    [[AFHTTPRequestOperationManager manager] GET:@"http://po.funshion.com/v7/config/channel"
+//                                      parameters:nil
+//                              expirationInterval:60
+//                                 completionBlock:^(id responseObject, NSError *error) {
+//        
+//        [channelException fulfill];
+//        
+//        XCTAssertNotNil(responseObject);
+//        XCTAssertNil(error);
+//
+//    }];
+//    
+//    
+//    XCTestExpectation* homepageException = [self expectationWithDescription:@"homepage"];
+//    
+//    [[AFHTTPRequestOperationManager manager] GET:@"http://po.funshion.com/v7/config/homepage"
+//                                      parameters:nil
+//                              expirationInterval:60
+//                                 completionBlock:^(id responseObject, NSError *error) {
+//        
+//        [homepageException fulfill];
+//        
+//        XCTAssertNotNil(responseObject);
+//        XCTAssertNil(error);
+//
+//        
+//    }];
+//    
+//    XCTestExpectation* mediaplayException = [self expectationWithDescription:@"mediaplay"];
+//    
+//    [[AFHTTPRequestOperationManager manager] GET:@"http://pm.funshion.com/v5/media/play"
+//                                      parameters:[NSDictionary dictionaryWithObjectsAndKeys:@"622334", @"id",nil]
+//                              expirationInterval:60
+//                                 completionBlock:^(id responseObject, NSError *error) {
+//        
+//        
+//        [mediaplayException fulfill];
+//        
+//        XCTAssertNotNil(responseObject);
+//        XCTAssertNil(error);
+//        
+//        
+//    }];
+//    
+//    XCTestExpectation* mediadownloadException = [self expectationWithDescription:@"mediadownload"];
+//    
+//    [[AFHTTPRequestOperationManager manager] GET:@"http://pm.funshion.com/v5/media/download"
+//                                      parameters:[NSDictionary dictionaryWithObjectsAndKeys:@"622334", @"id",nil]
+//                              expirationInterval:60
+//                                 completionBlock:^(id responseObject, NSError *error) {
+//        
+//        
+//        [mediadownloadException fulfill];
+//        
+//        XCTAssertNotNil(responseObject);
+//        XCTAssertNil(error);
+//
+//        
+//        
+//    }];
+//    
+//    XCTestExpectation* videoplayException = [self expectationWithDescription:@"videoplay"];
+//    
+//    [[AFHTTPRequestOperationManager manager] GET:@"http://pv.funshion.com/v5/video/play"
+//                                      parameters:[NSDictionary dictionaryWithObjectsAndKeys:@"4004819", @"id",nil]
+//                              expirationInterval:60
+//                                 completionBlock:^(id responseObject, NSError *error) {
+//                                     
+//                                     [videoplayException fulfill];
+//                                     
+//                                     XCTAssertNotNil(responseObject);
+//                                     XCTAssertNil(error);
+//                                     
+//                                     NSLog(@"%@", responseObject);
+//                                     
+//                                     
+//                                 }];
+//    
 
     XCTestExpectation* invalidException = [self expectationWithDescription:@"invalidException"];
     
