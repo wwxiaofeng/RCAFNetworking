@@ -24,7 +24,7 @@
 
 #import "AFHTTPRequestOperationManager.h"
 #import "AFHTTPRequestOperation.h"
-#import "AFHTTPRequestCache.h"
+#import "AFHTTPResponseCache.h"
 
 #import <Availability.h>
 #import <Security/Security.h>
@@ -102,6 +102,7 @@ static AFHTTPRequestOperationManager* sharedInstance;
 #pragma mark -
 - (AFHTTPRequestOperation*)GET:(NSString *)urlString
                     parameters:(id)parameters
+            expirationInterval:(NSTimeInterval)expirationInterval
                completionBlock:(void (^)(id responseObject, NSError *error))completionBlock
 {
     NSError *serializationError = nil;
@@ -121,13 +122,6 @@ static AFHTTPRequestOperationManager* sharedInstance;
         
         return nil;
     }
-
-    AFHTTPRequestCache* cache = [AFHTTPRequestCache getCacheWithURL:[request.URL absoluteString]];
-    
-    if (cache.responseObject) {
-        completionBlock(cache.responseObject, nil);
-        return nil;
-    }
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = self.responseSerializer;
@@ -137,17 +131,30 @@ static AFHTTPRequestOperationManager* sharedInstance;
 
     __weak typeof(AFHTTPRequestOperation*) weakOperation = operation;
     
+    [operation setResponseCacheDataBlock:^NSData *{
+        return [AFHTTPResponseCache getResponseDataFromDiskWithURL:[request.URL absoluteString]
+                                                expirationInterval:expirationInterval];
+    }];
+    
     [operation setCompletionBlock:^{
         
         if (completionBlock) {
-            completionBlock(weakOperation.responseObject, weakOperation.error);
+            
+            if (weakOperation.responseCacheData) {
+                completionBlock(weakOperation.responseObject, nil);
+            }
+            else{
+                
+                completionBlock(weakOperation.responseObject, weakOperation.error);
+                
+                [AFHTTPResponseCache saveResponseDataToDiskWithURL:[request.URL absoluteString]
+                                                      responseData:weakOperation.responseData];
+            }
+
         }
-        
-        [AFHTTPRequestCache saveCacheWithURL:[request.URL absoluteString]
-            expirationInterval:60
-                responseObject:weakOperation.responseObject];
     }];
     
+   
     [self.operationQueue addOperation:operation];
     
     return operation;

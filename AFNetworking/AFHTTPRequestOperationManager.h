@@ -157,6 +157,7 @@
 
 - (AFHTTPRequestOperation*)GET:(NSString *)urlString
                     parameters:(id)parameters
+            expirationInterval:(NSTimeInterval)expirationInterval
                completionBlock:(void (^)(id responseObject, NSError *error))completionBlock;
 
 - (AFHTTPRequestOperation*)DFILE:(NSString *)urlString
